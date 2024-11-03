@@ -85,11 +85,5 @@ def main2():
 
         time.sleep(0.1)
 
-    # inputed = ultraGraphicsLibrary.letterSelector(oled, buttonA, buttonB, buttonC)
-    # print(inputed)
-    # oled.fill(0)
-    # time.sleep(0.2)
-    
-
 if __name__ == "__main__":
     main2()

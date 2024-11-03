@@ -55,7 +55,7 @@ def selection_menu(oled, buttonA, buttonB, buttonC):
 def letterSelector(oled, buttonA, buttonB, buttonC):
     myFourRowScreen = four_row_screen(oled)
     selector = 0
-    abc = "abcdefghijklmnopqrstuvwxyz/_"
+    abc = "abcdefghijklmnopqrstuvwxyz;_"
     wheelInput = wheel.char_select()
 
     inputSting = ""
@@ -75,7 +75,7 @@ def letterSelector(oled, buttonA, buttonB, buttonC):
                 print("ButtonB is Pressed")
                 # myFourRowScreen.current_x_pos += CHAR_PIXEL_SIZE
                 #myFourRowScreen.increment_pos()
-                if abc[selector] == "/":
+                if abc[selector] == ";":
                     return inputSting.replace("_", " ")
                 inputSting += abc[selector]
                 break
@@ -96,14 +96,13 @@ def letterSelector(oled, buttonA, buttonB, buttonC):
                 myFourRowScreen.deleteLastChar()
                 break
 
-
-            time.sleep(1)
+            time.sleep(0.05)
 
             # if (buttonPush()):
             #     myFourRowScreen.current_x_pos += 1
             #     break
         
-        time.sleep_ms(1)
+        time.sleep(0.05)
 
 class four_row_screen(): 
     current_x_pos = HOME_X
