@@ -97,13 +97,13 @@ def letterSelector(oled, buttonA, buttonB, buttonC):
                 break
 
 
-            time.sleep(0.1)
+            time.sleep(1)
 
             # if (buttonPush()):
             #     myFourRowScreen.current_x_pos += 1
             #     break
         
-        time.sleep(0.1)
+        time.sleep_ms(1)
 
 class four_row_screen(): 
     current_x_pos = HOME_X

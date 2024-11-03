@@ -25,4 +25,5 @@ def enter_data(send_to_typewriter: bool = False) -> str:
             my_string += selection
         time.sleep_ms(1)
 
-print(enter_data())
+if __name__=="__main__":
+    print(enter_data())
