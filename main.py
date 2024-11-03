@@ -71,8 +71,8 @@ def main2():
         elif menu_selection == "OpenAI":
             # Collect prompt to send up. 
             print("Getting AI prompt")
-            # prompt = ultraGraphicsLibrary.letterSelector(oled, utils.btn_a, utils.btn_b, utils.btn_c)
-            prompt = user_input.enter_data()
+            prompt = ultraGraphicsLibrary.letterSelector(oled, utils.btn_a, utils.btn_b, utils.btn_c)
+            # prompt = user_input.enter_data()
             print("Sending to ChatGPT:", prompt)
             display.write_text("getting response")
             utils.write_to_typewriter(openai.chatgpt(prompt))
