@@ -1,6 +1,6 @@
 import wheel
 
-CHARACTERS = "abcdefghijklmnopqrstuvwxyz_;"
+CHARACTERS = "abcdefghijklmnopqrstuvwxyz_;\\"
 index = 0
 
 def poll():

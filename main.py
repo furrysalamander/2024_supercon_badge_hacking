@@ -7,10 +7,6 @@ import openai
 # import characters
 
 def main():
-    led = machine.Pin("LED", machine.Pin.OUT)
-    btn_a = machine.Pin(8, machine.Pin.IN, machine.Pin.PULL_UP)
-    btn_b = machine.Pin(9, machine.Pin.IN, machine.Pin.PULL_UP)
-    btn_c = machine.Pin(28, machine.Pin.IN, machine.Pin.PULL_UP)
     print("hello world")
 
     # my_string = ""

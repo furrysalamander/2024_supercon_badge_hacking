@@ -8,6 +8,7 @@ I2C_ADDR = 0x3C
 
 bus = utils.which_bus_has_device_id(I2C_ADDR)[0]
 display = ssd1306.SSD1306_I2C(DISP_WIDTH, DISP_HEIGHT, bus)
+display.rotate(False)
 # display.init_display()
 # display.poweron()
 

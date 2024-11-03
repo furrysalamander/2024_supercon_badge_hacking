@@ -7,6 +7,19 @@ import time
 i2c0 = machine.I2C(0, sda=machine.Pin(0), scl=machine.Pin(1), freq=400_000)
 i2c1 = machine.I2C(1, sda=machine.Pin(26), scl=machine.Pin(27), freq=400_000)
 
+led = machine.Pin("LED", machine.Pin.OUT)
+btn_a = machine.Pin(8, machine.Pin.IN, machine.Pin.PULL_UP)
+btn_b = machine.Pin(9, machine.Pin.IN, machine.Pin.PULL_UP)
+btn_c = machine.Pin(28, machine.Pin.IN, machine.Pin.PULL_UP)
+
+def button_pressed(button: machine.Pin) -> bool:
+    if not button.value():
+        time.sleep_ms(100)
+        while not button.value():
+            time.sleep_ms(100)
+        return True
+    return False
+
 def which_bus_has_device_id(i2c_id, debug=False):
     '''Returns a list of i2c bus objects that have the requested id on them.
     Note this can be of length 0, 1, or 2 depending on which I2C bus the id is found'''
