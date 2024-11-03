@@ -39,7 +39,7 @@ def selection_menu(oled, buttonA, buttonB, buttonC):
         
         if selector < 0:
             selector = 0
-        if selector > len(myFourRowScreen.display_rows):
+        if selector > len(myFourRowScreen.display_rows)-1:
             selector = len(myFourRowScreen.display_rows)-1
         for i, row in enumerate(myFourRowScreen.display_rows):
             if selector == i:
