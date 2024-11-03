@@ -1,4 +1,4 @@
-import utils
+# import utils
 import requests
 import json
 
@@ -16,8 +16,8 @@ def chatgpt(prompt: str) -> str:
     data = {"model": MODEL,
             "messages": wrapped_prompt,
             "max_tokens": MAX_TOKENS}
-    print(utils.wlan.ifconfig())
-    print(utils.wlan.status())
+    # print(utils.wlan.ifconfig())
+    # print(utils.wlan.status())
     # print(usocket.getaddrinfo('www.google.com', 80, 0, usocket.SOCK_STREAM))
 
     print("Attempting to send Prompt")

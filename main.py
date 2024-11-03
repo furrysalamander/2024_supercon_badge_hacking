@@ -3,6 +3,8 @@ import machine
 import utils
 import hackaday
 import openai
+# import display
+# import characters
 
 def main():
     led = machine.Pin("LED", machine.Pin.OUT)
@@ -10,6 +12,17 @@ def main():
     btn_b = machine.Pin(9, machine.Pin.IN, machine.Pin.PULL_UP)
     btn_c = machine.Pin(28, machine.Pin.IN, machine.Pin.PULL_UP)
     print("hello world")
+
+    # my_string = ""
+
+    # while True:
+    #     # display.write_text("asdf")
+    #     input = characters.poll()
+    #     display.write_text(my_string + input)
+    #     if btn_a.value() == False:
+    #         my_string += input
+    #     time.sleep_ms(1)
+    # return
     
     # input("press enter to continue")
     utils.connect_to_wifi()

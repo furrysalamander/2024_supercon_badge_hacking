@@ -46,7 +46,7 @@ def get_articles():
         if n > 3:
             break
         stripped_text = strip_html(item["content"])
-        text = f"{item["title"]}\n{stripped_text}"
+        text = f"{item["title"]}\n{stripped_text}\n"
         articles.append(text)
     return articles
 
