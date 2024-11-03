@@ -7,40 +7,32 @@ import ultraGraphicsLibrary
 from machine import Pin, I2C
 from ssd1306 import SSD1306_I2C
 
-# import display
-# import characters
+import display
+import characters
 
 def main():
     print("hello world")
-
-    # my_string = ""
-
-    # while True:
-    #     # display.write_text("asdf")
-    #     input = characters.poll()
-    #     display.write_text(my_string + input)
-    #     if btn_a.value() == False:
-    #         my_string += input
-    #     time.sleep_ms(1)
-    # return
+    display.write_text("connecting to wifi")
     
-    # input("press enter to continue")
     utils.connect_to_wifi()
+    display.write_text("connected")
 
+    def hackaday_demo():
+        for article in hackaday.get_articles():
+            utils.write_to_typewriter(
+                article
+            )
 
     while True:
+        display.write_text("press a to continue")
         while True:
-            led.toggle()
+            utils.led.toggle()
             time.sleep_ms(100)
-            if btn_a.value() == False:
+            if utils.button_pressed(utils.btn_a):
                 break
-
         try:
-            for article in hackaday.get_articles():
-                utils.write_to_typewriter(
-                    article
-                )
-
+            display.write_text("printing hackaday")
+            hackaday_demo()
             # response = openai.chatgpt("write an essay about photolithography")
             # utils.write_to_typewriter(response)
             break
@@ -49,7 +41,7 @@ def main():
             pass
     
     while True:
-        led.toggle()
+        utils.led.toggle()
         time.sleep(1)
 
 

@@ -11,7 +11,7 @@ def strip_html(html):
     """
     in_tag = False
     text = []
-    html = html.replace("’", "'")
+    html = html.replace("’", "'").replace("–", "-").replace("‘", "'")
     print("stripping an article")
     for char in html:
         if char == '<':
@@ -41,9 +41,9 @@ def get_articles():
         response_data = json.loads(r.text)
     articles = []
     n = 0
-    for item in response_data["items"]:
+    for item in response_data["items"][1:]:
         n += 1
-        if n > 3:
+        if n > 1: # Setting this to only print one article
             break
         stripped_text = strip_html(item["content"])
         text = f"{item["title"]}\n{stripped_text}\n"

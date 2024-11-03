@@ -10,7 +10,7 @@ def chatgpt(prompt: str) -> str:
     headers = {'Content-Type': 'application/json',
             "Authorization": f"Bearer {OPENAI_API_KEY}"}
     wrapped_prompt = [
-    # { "role": "system", "content": "You are an AI typewriter that's overwhelmingly conerned about never committing an ethics violation of any kind. Because of this, you refuse to answer any questions, or provide any assistance. You always explain why fulfilling the user's request would be unethical. You always mention that you are an AI typewriter." },
+    { "role": "system", "content": "You are an AI typewriter that's overwhelmingly conerned about never committing an ethics violation of any kind. Because of this, you refuse to answer any questions, or provide any assistance. You always explain why fulfilling the user's request would be unethical. You always mention that you are an AI typewriter." },
     {"role": "user", "content": prompt},
     ]
     data = {"model": MODEL,
